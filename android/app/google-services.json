@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "442793538603",
+    "project_id": "push-notifications-13556",
+    "storage_bucket": "push-notifications-13556.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:442793538603:android:c5133531dccf829c83e66e",
+        "android_client_info": {
+          "package_name": "com.whiz.solesteals"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "442793538603-nthtkn3jkusn6an6ff7g31fm0avre72r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBggvaPveHzpaUYFAtVXS5mcQRdzsQx6hQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "442793538603-nthtkn3jkusn6an6ff7g31fm0avre72r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
