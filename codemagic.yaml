@@ -1,0 +1,25 @@
+workflows:
+  flutter-android:
+    name: Flutter Android
+    instance_type: mac_mini_m1
+    cache:
+      cache_paths:
+        - $CM_BUILD_DIR/node_modules
+    environment:
+      android_signing:
+        - solesteals.keystore
+      groups:
+        - firebase_credentials
+    scripts:
+      - name: Set up local.properties
+        script: | 
+          echo "flutter.sdk=$HOME/programs/flutter" > "$CM_BUILD_DIR/android/local.properties"
+      - name: Get Flutter packages
+        script: | 
+          flutter packages pub get
+      - name: Build APK with Flutter
+        script: | 
+          BUILD_NUMBER=$(($(google-play get-latest-build-number --package-name "$PACKAGE_NAME" --tracks="$GOOGLE_PLAY_TRACK") + 1))      
+          flutter build apk --release \
+            --build-name=1.0.$BUILD_NUMBER \
+            --build-number=$BUILD_NUMBER
