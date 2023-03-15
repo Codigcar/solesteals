@@ -4,6 +4,8 @@ workflows:
     environment:
       android_signing:
         - solesteals.keystore
+      groups:
+        - firebase_credentials
       flutter: stable
     scripts:
       - name: Set up key.properties
@@ -15,3 +17,13 @@ workflows:
       - name: Build APK with Flutter
         script: | 
           flutter build apk --release
+    artifacts:
+      - build/**/outputs/**/*.apk
+    publishing:
+      firebase:
+        firebase_token: $FIREBASE_TOKEN
+        android:
+          app_id: 1:442793538603:android:c5133531dccf829c83e66e
+          artifact_type: 'apk'
+          groups:
+            - users
