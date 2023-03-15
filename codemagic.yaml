@@ -1,10 +1,6 @@
 workflows:
   flutter-android:
     name: Flutter Android
-    instance_type: mac_mini_m1
-    cache:
-      cache_paths:
-        - $CM_BUILD_DIR/node_modules
     environment:
       android_signing:
         - solesteals.keystore
