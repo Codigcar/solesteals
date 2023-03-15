@@ -1,6 +1,9 @@
 workflows:
   flutter-android:
     name: Flutter Android
+    cache:
+      cache_paths:
+        - $FLUTTER_ROOT/.pub-cache
     environment:
       android_signing:
         - solesteals.keystore
